@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { createTheme, ThemeProvider, CssBaseline, GlobalStyles } from '@mui/material';
-import { Box, Typography, Grid, Button, Paper, Container, TextField } from '@mui/material';
+import { Box, Typography, Grid, Button, Paper, Container, TextField, Fab  } from '@mui/material';
 import { styled, keyframes, margin } from '@mui/system';
 
 // --- 3D Cake Animation Keyframes ---
@@ -108,6 +108,13 @@ const FlowerIcon = () => (
         <circle cx="35" cy="65" r="12" />
         <circle cx="65" cy="35" r="12" />
     </svg>
+);
+const MusicOnIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+);
+
+const MusicOffIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6zm-2 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
 );
 
 
@@ -671,35 +678,38 @@ export default function App() {
             return <Letter onOpen={() => setIsLetterOpen(true)} onStartMusic={startMusic} />;
         }
         return (
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', p: { xs: 2, sm: 3 } }}>
-                <Container maxWidth="md">
-                    <Paper elevation={6} sx={{ p: { xs: 2, sm: 4, md: 6 }, textAlign: 'center', borderRadius: 4, bgcolor: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(5px)', animation: 'fade-in-up 1s 0.2s ease-out forwards', opacity: 0 }}>
-                        <Box component="header" mb={4}>
-                            <Typography variant="h2" component="h1" sx={{ fontFamily: 'Playfair Display', fontWeight: 700, color: 'primary.main', animation: 'pulse-slow 4s infinite', fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' } }}>
-                                Can't Wait for Your Birthday!
-                            </Typography>
-                            <Typography variant="h6" sx={{ color: 'text.secondary', mt: 1 }}>
-                                The countdown to your special day has begun...
-                            </Typography>
-                        </Box>
-                        
-                        <Countdown timeLeft={timeLeft} isBirthday={isBirthday} />
-                        <Carousel images={images} />
-                        <LoveReasons />
-                         <Paper elevation={0} sx={{ p: 3, mb: 5, backgroundColor: 'rgba(255, 255, 255, 0.9)', boxShadow: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)', textAlign: 'center' }}>
-                            <Typography variant="h4" sx={{ fontFamily: 'Playfair Display', fontWeight: 700, color: 'primary.main', mb: 2 }}>
-                                A Message for You
-                            </Typography>
-                            <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
-                                {/* TODO: Write your personal, heartfelt message here */}
-                                Every moment with you is a treasure, and I can't wait to celebrate the amazing person you are. Counting down the seconds until I can wish you the happiest of birthdays in person. You deserve all the love and joy in the world
-                            </Typography>
+            <>
+                <MusicToggle onToggle={toggleMusic} isMuted={!isPlaying} />
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', p: { xs: 2, sm: 3 } }}>
+                    <Container maxWidth="md">
+                        <Paper elevation={6} sx={{ p: { xs: 2, sm: 4, md: 6 }, textAlign: 'center', borderRadius: 4, bgcolor: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(5px)', animation: 'fade-in-up 1s 0.2s ease-out forwards', opacity: 0 }}>
+                            <Box component="header" mb={4}>
+                                <Typography variant="h2" component="h1" sx={{ fontFamily: 'Playfair Display', fontWeight: 700, color: 'primary.main', animation: 'pulse-slow 4s infinite', fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' } }}>
+                                    Can't Wait for Your Birthday!
+                                </Typography>
+                                <Typography variant="h6" sx={{ color: 'text.secondary', mt: 1 }}>
+                                    The countdown to your special day has begun...
+                                </Typography>
+                            </Box>
+                            
+                            <Countdown timeLeft={timeLeft} isBirthday={isBirthday} />
+                            <Carousel images={images} />
+                            <LoveReasons />
+                            <Paper elevation={0} sx={{ p: 3, mb: 5, backgroundColor: 'rgba(255, 255, 255, 0.9)', boxShadow: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)', textAlign: 'center' }}>
+                                <Typography variant="h4" sx={{ fontFamily: 'Playfair Display', fontWeight: 700, color: 'primary.main', mb: 2 }}>
+                                    A Message for You
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.7 }}>
+                                    {/* TODO: Write your personal, heartfelt message here */}
+                                    Every moment with you is a treasure, and I can't wait to celebrate the amazing person you are. Counting down the seconds until I can wish you the happiest of birthdays in person. You deserve all the love and joy in the world
+                                </Typography>
+                            </Paper>
+                            <GiftBox isBirthday={isBirthday}  />
+                            {/* <WishJar /> */}
                         </Paper>
-                        <GiftBox isBirthday={isBirthday}  />
-                        {/* <WishJar /> */}
-                    </Paper>
-                </Container>
-            </Box>
+                    </Container>
+                </Box>
+            </>
         );
     };
 
