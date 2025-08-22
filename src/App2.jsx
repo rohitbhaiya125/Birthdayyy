@@ -623,13 +623,13 @@ export default function App() {
     const images = [
         { src: "https://res.cloudinary.com/diap8ejji/image/upload/t_Banner 16:9/v1755457706/WhatsApp_Image_2025-08-18_at_12.26.04_AM_i7lslf.jpg", alt: "Her Picture 2" },
         { src: "https://res.cloudinary.com/diap8ejji/image/upload/t_Banner 16:9/v1755457706/WhatsApp_Image_2025-08-18_at_12.30.00_AM_jga62d.jpg", alt: "Her Picture 3" },
-        { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755791857/WhatsApp_Image_2025-08-21_at_9.04.35_PM_vd3b4i.jpg", alt: "Her Picture 3" },
+        // { src: "https://res.cloudinary.com/diap8ejji/image/upload/t_Banner%209:16/v1755791857/WhatsApp_Image_2025-08-21_at_9.04.35_PM_vd3b4i.jpg", alt: "Her Picture 3" },
         // { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755791863/WhatsApp_Image_2025-08-21_at_9.03.46_PM_m47agd.jpg", alt: "Her Picture 3" },
         { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755791862/WhatsApp_Image_2025-08-21_at_9.06.22_PM_jtxc4n.jpg", alt: "Her Picture 3" },
 
 
         // { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755685163/WhatsApp_Image_2025-08-19_at_6.13.24_PM_zomnn5.jpg", alt: "Her Picture 5" },
-        // { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755684997/WhatsApp_Image_2025-08-19_at_6.13.52_PM_dzmcut.jpg", alt: "Her Picture 1" },
+        { src: "https://res.cloudinary.com/diap8ejji/image/upload/v1755684997/WhatsApp_Image_2025-08-19_at_6.13.52_PM_dzmcut.jpg", alt: "Her Picture 1" },
         { src: "https://res.cloudinary.com/diap8ejji/image/upload/t_Banner 16:9/v1755604807/WhatsApp_Image_2025-08-19_at_5.29.05_PM_yiedwr.jpg", alt: "Her Picture 2" },
         { src: "https://res.cloudinary.com/diap8ejji/image/upload/t_Banner 16:9/v1755604839/WhatsApp_Image_2025-08-19_at_5.28.25_PM_nuq7lm.jpg", alt: "Her Picture 3" },
     ];
