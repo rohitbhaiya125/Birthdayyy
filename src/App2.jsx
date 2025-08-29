@@ -708,7 +708,6 @@ export default function App() {
                                 </Typography>
                             </Paper>
                             <GiftBox isBirthday={isBirthday}  />
-                            {/* <WishJar /> */}
                         </Paper>
                     </Container>
                 </Box>
