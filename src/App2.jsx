@@ -595,7 +595,7 @@ const MusicToggle = ({ onToggle, isMuted }) => (
 
 
 // --- Main App Component ---
-export default function App() {
+export default function BApp() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLetterOpen, setIsLetterOpen] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
